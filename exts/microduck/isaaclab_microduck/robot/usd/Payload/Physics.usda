@@ -1,0 +1,780 @@
+#usda 1.0
+(
+    customLayerData = {
+        string creator = "MuJoCo USD Converter v0.5.0"
+    }
+    defaultPrim = "microduck"
+    kilogramsPerUnit = 1
+    metersPerUnit = 1
+    upAxis = "Z"
+)
+
+def Xform "microduck"
+{
+    def Scope "Physics"
+    {
+        def Material "PhysicsMaterial" (
+            prepend apiSchemas = ["PhysicsMaterialAPI", "NewtonMaterialAPI"]
+        )
+        {
+            float newton:contactDamping = 100
+            float newton:contactStiffness = 2500
+            float newton:rollingFriction = 0.0001
+            float newton:torsionalFriction = 0.005
+            float physics:dynamicFriction = 1
+            float physics:staticFriction = 1
+        }
+
+        def MjcActuator "left_hip_yaw"
+        {
+            uniform double[] mjc:biasPrm = [0, -0.55, -0, 0, 0, 0, 0, 0, 0, 0]
+            uniform token mjc:biasType = "affine"
+            uniform double mjc:ctrlRange:max = 10
+            uniform double mjc:ctrlRange:min = -10
+            uniform double mjc:forceRange:max = 0.96
+            uniform double mjc:forceRange:min = -0.96
+            uniform double[] mjc:gainPrm = [0.55, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+            rel mjc:target = </microduck/Geometry/trunk_base/yaw2roll/left_hip_yaw>
+        }
+
+        def MjcActuator "left_hip_roll"
+        {
+            uniform double[] mjc:biasPrm = [0, -0.55, -0, 0, 0, 0, 0, 0, 0, 0]
+            uniform token mjc:biasType = "affine"
+            uniform double mjc:ctrlRange:max = 10
+            uniform double mjc:ctrlRange:min = -10
+            uniform double mjc:forceRange:max = 0.96
+            uniform double mjc:forceRange:min = -0.96
+            uniform double[] mjc:gainPrm = [0.55, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+            rel mjc:target = </microduck/Geometry/trunk_base/yaw2roll/hip_l/left_hip_roll>
+        }
+
+        def MjcActuator "left_hip_pitch"
+        {
+            uniform double[] mjc:biasPrm = [0, -0.55, -0, 0, 0, 0, 0, 0, 0, 0]
+            uniform token mjc:biasType = "affine"
+            uniform double mjc:ctrlRange:max = 10
+            uniform double mjc:ctrlRange:min = -10
+            uniform double mjc:forceRange:max = 0.96
+            uniform double mjc:forceRange:min = -0.96
+            uniform double[] mjc:gainPrm = [0.55, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+            rel mjc:target = </microduck/Geometry/trunk_base/yaw2roll/hip_l/upper_leg_left/left_hip_pitch>
+        }
+
+        def MjcActuator "left_knee"
+        {
+            uniform double[] mjc:biasPrm = [0, -0.55, -0, 0, 0, 0, 0, 0, 0, 0]
+            uniform token mjc:biasType = "affine"
+            uniform double mjc:ctrlRange:max = 10
+            uniform double mjc:ctrlRange:min = -10
+            uniform double mjc:forceRange:max = 0.96
+            uniform double mjc:forceRange:min = -0.96
+            uniform double[] mjc:gainPrm = [0.55, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+            rel mjc:target = </microduck/Geometry/trunk_base/yaw2roll/hip_l/upper_leg_left/leg/left_knee>
+        }
+
+        def MjcActuator "left_ankle"
+        {
+            uniform double[] mjc:biasPrm = [0, -0.55, -0, 0, 0, 0, 0, 0, 0, 0]
+            uniform token mjc:biasType = "affine"
+            uniform double mjc:ctrlRange:max = 10
+            uniform double mjc:ctrlRange:min = -10
+            uniform double mjc:forceRange:max = 0.96
+            uniform double mjc:forceRange:min = -0.96
+            uniform double[] mjc:gainPrm = [0.55, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+            rel mjc:target = </microduck/Geometry/trunk_base/yaw2roll/hip_l/upper_leg_left/leg/ankle_left/left_ankle>
+        }
+
+        def MjcActuator "neck_pitch"
+        {
+            uniform double[] mjc:biasPrm = [0, -0.55, -0, 0, 0, 0, 0, 0, 0, 0]
+            uniform token mjc:biasType = "affine"
+            uniform double mjc:ctrlRange:max = 10
+            uniform double mjc:ctrlRange:min = -10
+            uniform double mjc:forceRange:max = 0.96
+            uniform double mjc:forceRange:min = -0.96
+            uniform double[] mjc:gainPrm = [0.55, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+            rel mjc:target = </microduck/Geometry/trunk_base/neck/neck_pitch>
+        }
+
+        def MjcActuator "head_pitch"
+        {
+            uniform double[] mjc:biasPrm = [0, -0.55, -0, 0, 0, 0, 0, 0, 0, 0]
+            uniform token mjc:biasType = "affine"
+            uniform double mjc:ctrlRange:max = 10
+            uniform double mjc:ctrlRange:min = -10
+            uniform double mjc:forceRange:max = 0.96
+            uniform double mjc:forceRange:min = -0.96
+            uniform double[] mjc:gainPrm = [0.55, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+            rel mjc:target = </microduck/Geometry/trunk_base/neck/neck_pitch_1/head_pitch>
+        }
+
+        def MjcActuator "head_yaw"
+        {
+            uniform double[] mjc:biasPrm = [0, -0.55, -0, 0, 0, 0, 0, 0, 0, 0]
+            uniform token mjc:biasType = "affine"
+            uniform double mjc:ctrlRange:max = 10
+            uniform double mjc:ctrlRange:min = -10
+            uniform double mjc:forceRange:max = 0.96
+            uniform double mjc:forceRange:min = -0.96
+            uniform double[] mjc:gainPrm = [0.55, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+            rel mjc:target = </microduck/Geometry/trunk_base/neck/neck_pitch_1/yaw_roll_motion/head_yaw>
+        }
+
+        def MjcActuator "head_roll"
+        {
+            uniform double[] mjc:biasPrm = [0, -0.55, -0, 0, 0, 0, 0, 0, 0, 0]
+            uniform token mjc:biasType = "affine"
+            uniform double mjc:ctrlRange:max = 10
+            uniform double mjc:ctrlRange:min = -10
+            uniform double mjc:forceRange:max = 0.96
+            uniform double mjc:forceRange:min = -0.96
+            uniform double[] mjc:gainPrm = [0.55, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+            rel mjc:target = </microduck/Geometry/trunk_base/neck/neck_pitch_1/yaw_roll_motion/jaw_soft/head_roll>
+        }
+
+        def MjcActuator "right_hip_yaw"
+        {
+            uniform double[] mjc:biasPrm = [0, -0.55, -0, 0, 0, 0, 0, 0, 0, 0]
+            uniform token mjc:biasType = "affine"
+            uniform double mjc:ctrlRange:max = 10
+            uniform double mjc:ctrlRange:min = -10
+            uniform double mjc:forceRange:max = 0.96
+            uniform double mjc:forceRange:min = -0.96
+            uniform double[] mjc:gainPrm = [0.55, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+            rel mjc:target = </microduck/Geometry/trunk_base/bearing_roll/right_hip_yaw>
+        }
+
+        def MjcActuator "right_hip_roll"
+        {
+            uniform double[] mjc:biasPrm = [0, -0.55, -0, 0, 0, 0, 0, 0, 0, 0]
+            uniform token mjc:biasType = "affine"
+            uniform double mjc:ctrlRange:max = 10
+            uniform double mjc:ctrlRange:min = -10
+            uniform double mjc:forceRange:max = 0.96
+            uniform double mjc:forceRange:min = -0.96
+            uniform double[] mjc:gainPrm = [0.55, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+            rel mjc:target = </microduck/Geometry/trunk_base/bearing_roll/hip_l_2/right_hip_roll>
+        }
+
+        def MjcActuator "right_hip_pitch"
+        {
+            uniform double[] mjc:biasPrm = [0, -0.55, -0, 0, 0, 0, 0, 0, 0, 0]
+            uniform token mjc:biasType = "affine"
+            uniform double mjc:ctrlRange:max = 10
+            uniform double mjc:ctrlRange:min = -10
+            uniform double mjc:forceRange:max = 0.96
+            uniform double mjc:forceRange:min = -0.96
+            uniform double[] mjc:gainPrm = [0.55, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+            rel mjc:target = </microduck/Geometry/trunk_base/bearing_roll/hip_l_2/upper_leg_right/right_hip_pitch>
+        }
+
+        def MjcActuator "right_knee"
+        {
+            uniform double[] mjc:biasPrm = [0, -0.55, -0, 0, 0, 0, 0, 0, 0, 0]
+            uniform token mjc:biasType = "affine"
+            uniform double mjc:ctrlRange:max = 10
+            uniform double mjc:ctrlRange:min = -10
+            uniform double mjc:forceRange:max = 0.96
+            uniform double mjc:forceRange:min = -0.96
+            uniform double[] mjc:gainPrm = [0.55, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+            rel mjc:target = </microduck/Geometry/trunk_base/bearing_roll/hip_l_2/upper_leg_right/leg_2/right_knee>
+        }
+
+        def MjcActuator "right_ankle"
+        {
+            uniform double[] mjc:biasPrm = [0, -0.55, -0, 0, 0, 0, 0, 0, 0, 0]
+            uniform token mjc:biasType = "affine"
+            uniform double mjc:ctrlRange:max = 10
+            uniform double mjc:ctrlRange:min = -10
+            uniform double mjc:forceRange:max = 0.96
+            uniform double mjc:forceRange:min = -0.96
+            uniform double[] mjc:gainPrm = [0.55, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+            rel mjc:target = </microduck/Geometry/trunk_base/bearing_roll/hip_l_2/upper_leg_right/leg_2/ankle_right/right_ankle>
+        }
+    }
+
+    def "Geometry"
+    {
+        def "trunk_base" (
+            prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "NewtonMassAPI", "PhysicsArticulationRootAPI", "NewtonArticulationRootAPI"]
+        )
+        {
+            double[] newton:inertia = [0.000123975, 0.000145931, 0.000115351, 7.1651e-8, -0.0000206915, 1.32429e-7]
+            uniform bool newton:jointsAddMobility = 1
+            point3f physics:centerOfMass = (-0.0226332, -0.0000270828, 0.00280064)
+            float3 physics:diagonalInertia = (0.00014593161, 0.00014079887, 0.000098526514)
+            float physics:mass = 0.199224
+            quatf physics:principalAxes = (0.66486573, 0.2383807, 0.23501207, 0.6677556)
+
+            over "power_support_1" (
+                prepend apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
+            )
+            {
+                rel material:binding:physics = </microduck/Physics/PhysicsMaterial>
+                uniform int mjc:group = 3
+                uniform double[] mjc:solref = [0.02, 1]
+                float newton:contactGap = 0
+                uniform token physics:approximation = "convexHull"
+                float physics:density = 1000
+            }
+
+            over "imu" (
+                prepend apiSchemas = ["MjcSiteAPI", "NewtonSiteAPI"]
+            )
+            {
+                uniform int mjc:group = 3
+            }
+
+            def "yaw2roll" (
+                prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "NewtonMassAPI"]
+            )
+            {
+                double[] newton:inertia = [0.0000041964, 0.00000341752, 0.0000023265, -0, -0, -5.0881e-8]
+                point3f physics:centerOfMass = (-8.8e-11, 0.00099414, 0.0168917)
+                float3 physics:diagonalInertia = (0.0000041964, 0.0000034198877, 0.0000023241323)
+                float physics:mass = 0.0230406
+                quatf physics:principalAxes = (0.9997297, -0.023248723, 0, 0)
+
+                def PhysicsRevoluteJoint "left_hip_yaw" (
+                    prepend apiSchemas = ["MjcJointAPI", "NewtonJointAPI"]
+                )
+                {
+                    uniform double mjc:armature = 0.0018
+                    uniform double mjc:damping = 0.053
+                    uniform double mjc:frictionloss = 0.0048
+                    float newton:armature = 0.0018
+                    float newton:damping = 0.0009250245
+                    float newton:friction = 0.0048
+                    uniform token physics:axis = "Z"
+                    rel physics:body0 = </microduck/Geometry/trunk_base>
+                    rel physics:body1 = </microduck/Geometry/trunk_base/yaw2roll>
+                    point3f physics:localPos0 = (0.006, 0.0175, -0.005)
+                    point3f physics:localPos1 = (0, 0, 0)
+                    quatf physics:localRot0 = (-1.6081226e-16, 0.70710677, 0.70710677, 2.2993472e-17)
+                    quatf physics:localRot1 = (1, 0, 0, 0)
+                    float physics:lowerLimit = -25
+                    float physics:upperLimit = 30
+                }
+
+                def "hip_l" (
+                    prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "NewtonMassAPI"]
+                )
+                {
+                    double[] newton:inertia = [8.60626e-7, 0.00000115753, 6.51588e-7, 1e-12, 3.89882e-7, -1e-12]
+                    point3f physics:centerOfMass = (0.014815, 1.6179e-8, -0.00829992)
+                    float3 physics:diagonalInertia = (0.0000011597556, 0.00000115753, 3.524584e-7)
+                    float physics:mass = 0.00618934
+                    quatf physics:principalAxes = (0.9469398, -8.245896e-7, -0.3214109, -2.798827e-7)
+
+                    def PhysicsRevoluteJoint "left_hip_roll" (
+                        prepend apiSchemas = ["MjcJointAPI", "NewtonJointAPI"]
+                    )
+                    {
+                        uniform double mjc:armature = 0.0018
+                        uniform double mjc:damping = 0.053
+                        uniform double mjc:frictionloss = 0.0048
+                        float newton:armature = 0.0018
+                        float newton:damping = 0.0009250245
+                        float newton:friction = 0.0048
+                        uniform token physics:axis = "Z"
+                        rel physics:body0 = </microduck/Geometry/trunk_base/yaw2roll>
+                        rel physics:body1 = </microduck/Geometry/trunk_base/yaw2roll/hip_l>
+                        point3f physics:localPos0 = (0, 0.0165, 0.0125)
+                        point3f physics:localPos1 = (0, 0, 0)
+                        quatf physics:localRot0 = (0.7071068, -0.7071067, 5.551115e-17, 1.911944e-17)
+                        quatf physics:localRot1 = (1, 0, 0, 0)
+                        float physics:lowerLimit = -22
+                        float physics:upperLimit = 22
+                    }
+
+                    def "upper_leg_left" (
+                        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "NewtonMassAPI"]
+                    )
+                    {
+                        double[] newton:inertia = [0.0000168753, 0.0000103691, 0.0000198269, -0.00000441852, 2.27982e-7, 3.89298e-7]
+                        point3f physics:centerOfMass = (0.006766, 0.0228838, 0.0134531)
+                        float3 physics:diagonalInertia = (0.000019845265, 0.000019108042, 0.000008117992)
+                        float physics:mass = 0.0482067
+                        quatf physics:principalAxes = (0.62081784, 0.37427855, -0.58369637, 0.36578593)
+
+                        def PhysicsRevoluteJoint "left_hip_pitch" (
+                            prepend apiSchemas = ["MjcJointAPI", "NewtonJointAPI"]
+                        )
+                        {
+                            uniform double mjc:armature = 0.0018
+                            uniform double mjc:damping = 0.053
+                            uniform double mjc:frictionloss = 0.0048
+                            float newton:armature = 0.0018
+                            float newton:damping = 0.0009250245
+                            float newton:friction = 0.0048
+                            uniform token physics:axis = "Z"
+                            rel physics:body0 = </microduck/Geometry/trunk_base/yaw2roll/hip_l>
+                            rel physics:body1 = </microduck/Geometry/trunk_base/yaw2roll/hip_l/upper_leg_left>
+                            point3f physics:localPos0 = (0.025, 0, -0.0185)
+                            point3f physics:localPos1 = (0, 0, 0)
+                            quatf physics:localRot0 = (0.5, -0.5, 0.5, -0.5)
+                            quatf physics:localRot1 = (1, 0, 0, 0)
+                            float physics:lowerLimit = -90
+                            float physics:upperLimit = 90
+                        }
+
+                        def "leg" (
+                            prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "NewtonMassAPI"]
+                        )
+                        {
+                            double[] newton:inertia = [0.00000525056, 0.00000215507, 0.00000433925, -1e-12, 0, 7.65005e-7]
+                            point3f physics:centerOfMass = (-1.52e-10, 0.0318937, -0.00953505)
+                            float3 physics:diagonalInertia = (0.00000525056, 0.000004580537, 0.0000019137833)
+                            float physics:mass = 0.0215844
+                            quatf physics:principalAxes = (0.80647326, 0.59127057, 0, 0)
+
+                            over "leg_1" (
+                                prepend apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
+                            )
+                            {
+                                rel material:binding:physics = </microduck/Physics/PhysicsMaterial>
+                                uniform int mjc:group = 3
+                                uniform double[] mjc:solref = [0.02, 1]
+                                float newton:contactGap = 0
+                                uniform token physics:approximation = "convexHull"
+                                float physics:density = 1000
+                            }
+
+                            def PhysicsRevoluteJoint "left_knee" (
+                                prepend apiSchemas = ["MjcJointAPI", "NewtonJointAPI"]
+                            )
+                            {
+                                uniform double mjc:armature = 0.0018
+                                uniform double mjc:damping = 0.053
+                                uniform double mjc:frictionloss = 0.0048
+                                float newton:armature = 0.0018
+                                float newton:damping = 0.0009250245
+                                float newton:friction = 0.0048
+                                uniform token physics:axis = "Z"
+                                rel physics:body0 = </microduck/Geometry/trunk_base/yaw2roll/hip_l/upper_leg_left>
+                                rel physics:body1 = </microduck/Geometry/trunk_base/yaw2roll/hip_l/upper_leg_left/leg>
+                                point3f physics:localPos0 = (0.022, 0.0357771, -0.004)
+                                point3f physics:localPos1 = (0, 0, 0)
+                                quatf physics:localRot0 = (-3.910513e-17, 0.70710677, 0.70710677, -5.551115e-17)
+                                quatf physics:localRot1 = (1, 0, 0, 0)
+                                float physics:lowerLimit = -90
+                                float physics:upperLimit = 90
+                            }
+
+                            def "ankle_left" (
+                                prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "NewtonMassAPI"]
+                            )
+                            {
+                                double[] newton:inertia = [0.00000591525, 0.0000111534, 0.00000774015, -2.0535e-7, 8.2152e-8, 5.6714e-8]
+                                point3f physics:centerOfMass = (-0.00615738, -0.0137483, -0.0156586)
+                                float3 physics:diagonalInertia = (0.000011162273, 0.000007743185, 0.0000059033414)
+                                float physics:mass = 0.0300246
+                                quatf physics:principalAxes = (0.47472724, 0.50517845, 0.5174232, 0.5016991)
+
+                                over "left_foot_collision" (
+                                    prepend apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
+                                )
+                                {
+                                    rel material:binding:physics = </microduck/Physics/PhysicsMaterial>
+                                    uniform int mjc:group = 3
+                                    uniform double[] mjc:solref = [0.02, 1]
+                                    float newton:contactGap = 0
+                                    uniform token physics:approximation = "convexHull"
+                                    float physics:density = 1000
+                                }
+
+                                over "left_foot" (
+                                    prepend apiSchemas = ["MjcSiteAPI", "NewtonSiteAPI"]
+                                )
+                                {
+                                    uniform int mjc:group = 3
+                                }
+
+                                def PhysicsRevoluteJoint "left_ankle" (
+                                    prepend apiSchemas = ["MjcJointAPI", "NewtonJointAPI"]
+                                )
+                                {
+                                    uniform double mjc:armature = 0.0018
+                                    uniform double mjc:damping = 0.053
+                                    uniform double mjc:frictionloss = 0.0048
+                                    float newton:armature = 0.0018
+                                    float newton:damping = 0.0009250245
+                                    float newton:friction = 0.0048
+                                    uniform token physics:axis = "Z"
+                                    rel physics:body0 = </microduck/Geometry/trunk_base/yaw2roll/hip_l/upper_leg_left/leg>
+                                    rel physics:body1 = </microduck/Geometry/trunk_base/yaw2roll/hip_l/upper_leg_left/leg/ankle_left>
+                                    point3f physics:localPos0 = (6.938894e-18, 0.042, -0.026)
+                                    point3f physics:localPos1 = (0, 0, 0)
+                                    quatf physics:localRot0 = (-1.8595285e-16, -1, 4.2349993e-17, -2.1435201e-17)
+                                    quatf physics:localRot1 = (1, 0, 0, 0)
+                                    float physics:lowerLimit = -90
+                                    float physics:upperLimit = 90
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            def "neck" (
+                prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "NewtonMassAPI"]
+            )
+            {
+                double[] newton:inertia = [0.0000172925, 0.00000312694, 0.0000163707, 0, 0, 0]
+                point3f physics:centerOfMass = (0, -0.025, 0.0141665)
+                float3 physics:diagonalInertia = (0.0000172925, 0.0000163707, 0.00000312694)
+                float physics:mass = 0.0368414
+                quatf physics:principalAxes = (0.70710677, 0.70710677, 0, 0)
+
+                def PhysicsRevoluteJoint "neck_pitch" (
+                    prepend apiSchemas = ["MjcJointAPI", "NewtonJointAPI"]
+                )
+                {
+                    uniform double mjc:armature = 0.0018
+                    uniform double mjc:damping = 0.053
+                    uniform double mjc:frictionloss = 0.0048
+                    float newton:armature = 0.0018
+                    float newton:damping = 0.0009250245
+                    float newton:friction = 0.0048
+                    uniform token physics:axis = "Z"
+                    rel physics:body0 = </microduck/Geometry/trunk_base>
+                    rel physics:body1 = </microduck/Geometry/trunk_base/neck>
+                    point3f physics:localPos0 = (0.026, 0.0145, 0.0324215)
+                    point3f physics:localPos1 = (0, 0, 0)
+                    quatf physics:localRot0 = (-1.6081226e-16, -4.5986944e-17, -0.70710677, 0.70710677)
+                    quatf physics:localRot1 = (1, 0, 0, 0)
+                    float physics:lowerLimit = -90
+                    float physics:upperLimit = 60
+                }
+
+                def "neck_pitch_1" (
+                    prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "NewtonMassAPI"]
+                )
+                {
+                    double[] newton:inertia = [0.00000109186, 9.66855e-7, 5.12111e-7, 0, 0, 0]
+                    point3f physics:centerOfMass = (-6.533e-9, 0.0116641, -0.0145)
+                    float3 physics:diagonalInertia = (0.00000109186, 9.66855e-7, 5.12111e-7)
+                    float physics:mass = 0.00572
+                    quatf physics:principalAxes = (1, 0, 0, 0)
+
+                    def PhysicsRevoluteJoint "head_pitch" (
+                        prepend apiSchemas = ["MjcJointAPI", "NewtonJointAPI"]
+                    )
+                    {
+                        uniform double mjc:armature = 0.0018
+                        uniform double mjc:damping = 0.053
+                        uniform double mjc:frictionloss = 0.0048
+                        float newton:armature = 0.0018
+                        float newton:damping = 0.0009250245
+                        float newton:friction = 0.0048
+                        uniform token physics:axis = "Z"
+                        rel physics:body0 = </microduck/Geometry/trunk_base/neck>
+                        rel physics:body1 = </microduck/Geometry/trunk_base/neck/neck_pitch_1>
+                        point3f physics:localPos0 = (0, -0.05, 1.7347235e-18)
+                        point3f physics:localPos1 = (0, 0, 0)
+                        quatf physics:localRot0 = (2.220446e-16, 1, 1.517007e-17, -6.3901745e-18)
+                        quatf physics:localRot1 = (1, 0, 0, 0)
+                        float physics:lowerLimit = -90
+                        float physics:upperLimit = 90
+                    }
+
+                    def "yaw_roll_motion" (
+                        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "NewtonMassAPI"]
+                    )
+                    {
+                        double[] newton:inertia = [0.00000697903, 0.00000810293, 0.00000957884, 3.21657e-7, -3.4797e-8, 3.4295e-7]
+                        point3f physics:centerOfMass = (-0.000166657, -0.00500964, 0.0178065)
+                        float3 physics:diagonalInertia = (0.0000096551175, 0.000008117878, 0.000006887805)
+                        float physics:mass = 0.0486
+                        quatf physics:principalAxes = (0.17448269, 0.6901722, -0.019257732, 0.70203084)
+
+                        def PhysicsRevoluteJoint "head_yaw" (
+                            prepend apiSchemas = ["MjcJointAPI", "NewtonJointAPI"]
+                        )
+                        {
+                            uniform double mjc:armature = 0.0018
+                            uniform double mjc:damping = 0.053
+                            uniform double mjc:frictionloss = 0.0048
+                            float newton:armature = 0.0018
+                            float newton:damping = 0.0009250245
+                            float newton:friction = 0.0048
+                            uniform token physics:axis = "Z"
+                            rel physics:body0 = </microduck/Geometry/trunk_base/neck/neck_pitch_1>
+                            rel physics:body1 = </microduck/Geometry/trunk_base/neck/neck_pitch_1/yaw_roll_motion>
+                            point3f physics:localPos0 = (0, 0.0186931, -0.0145)
+                            point3f physics:localPos1 = (0, 0, 0)
+                            quatf physics:localRot0 = (6.123234e-17, 1.6702059e-16, -0.70710677, -0.70710677)
+                            quatf physics:localRot1 = (1, 0, 0, 0)
+                            float physics:lowerLimit = -170
+                            float physics:upperLimit = 170
+                        }
+
+                        def "jaw_soft" (
+                            prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "NewtonMassAPI"]
+                        )
+                        {
+                            double[] newton:inertia = [0.000320812, 0.0002541, 0.000149882, -6.32292e-7, 0.00000657154, 0.00000418476]
+                            point3f physics:centerOfMass = (0.00460523, 0.00120047, -0.0324761)
+                            float3 physics:diagonalInertia = (0.0003210676, 0.00025426573, 0.00014946067)
+                            float physics:mass = 0.188766
+                            quatf physics:principalAxes = (0.9996084, 0.020148745, -0.019164326, -0.0031392677)
+
+                            over "head_camera" (
+                                prepend apiSchemas = ["MjcSiteAPI", "NewtonSiteAPI"]
+                            )
+                            {
+                                uniform int mjc:group = 3
+                            }
+
+                            over "tof" (
+                                prepend apiSchemas = ["MjcSiteAPI", "NewtonSiteAPI"]
+                            )
+                            {
+                                uniform int mjc:group = 3
+                            }
+
+                            over "head_imu" (
+                                prepend apiSchemas = ["MjcSiteAPI", "NewtonSiteAPI"]
+                            )
+                            {
+                                uniform int mjc:group = 3
+                            }
+
+                            over "mouth_tip" (
+                                prepend apiSchemas = ["MjcSiteAPI", "NewtonSiteAPI"]
+                            )
+                            {
+                                uniform int mjc:group = 3
+                            }
+
+                            def PhysicsRevoluteJoint "head_roll" (
+                                prepend apiSchemas = ["MjcJointAPI", "NewtonJointAPI"]
+                            )
+                            {
+                                uniform double mjc:armature = 0.0018
+                                uniform double mjc:damping = 0.053
+                                uniform double mjc:frictionloss = 0.0048
+                                float newton:armature = 0.0018
+                                float newton:damping = 0.0009250245
+                                float newton:friction = 0.0048
+                                uniform token physics:axis = "Z"
+                                rel physics:body0 = </microduck/Geometry/trunk_base/neck/neck_pitch_1/yaw_roll_motion>
+                                rel physics:body1 = </microduck/Geometry/trunk_base/neck/neck_pitch_1/yaw_roll_motion/jaw_soft>
+                                point3f physics:localPos0 = (-0.0179, 3.081488e-33, 0.0145)
+                                point3f physics:localPos1 = (0, 0, 0)
+                                quatf physics:localRot0 = (0.7071068, 1.811166e-16, -0.7071067, 9.4521e-17)
+                                quatf physics:localRot1 = (1, 0, 0, 0)
+                                float physics:lowerLimit = -25
+                                float physics:upperLimit = 25
+                            }
+                        }
+                    }
+                }
+            }
+
+            def "bearing_roll" (
+                prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "NewtonMassAPI"]
+            )
+            {
+                double[] newton:inertia = [0.0000041964, 0.00000341752, 0.0000023265, -0, -0, -5.0881e-8]
+                point3f physics:centerOfMass = (-8.8e-11, 0.00099414, 0.0168917)
+                float3 physics:diagonalInertia = (0.0000041964, 0.0000034198877, 0.0000023241323)
+                float physics:mass = 0.0230406
+                quatf physics:principalAxes = (0.9997297, -0.023248723, 0, 0)
+
+                def PhysicsRevoluteJoint "right_hip_yaw" (
+                    prepend apiSchemas = ["MjcJointAPI", "NewtonJointAPI"]
+                )
+                {
+                    uniform double mjc:armature = 0.0018
+                    uniform double mjc:damping = 0.053
+                    uniform double mjc:frictionloss = 0.0048
+                    float newton:armature = 0.0018
+                    float newton:damping = 0.0009250245
+                    float newton:friction = 0.0048
+                    uniform token physics:axis = "Z"
+                    rel physics:body0 = </microduck/Geometry/trunk_base>
+                    rel physics:body1 = </microduck/Geometry/trunk_base/bearing_roll>
+                    point3f physics:localPos0 = (0.006, -0.0175, -0.005)
+                    point3f physics:localPos1 = (0, 0, 0)
+                    quatf physics:localRot0 = (6.123234e-17, 0.70710677, 0.70710677, 4.5986944e-17)
+                    quatf physics:localRot1 = (1, 0, 0, 0)
+                    float physics:lowerLimit = -30
+                    float physics:upperLimit = 25
+                }
+
+                def "hip_l_2" (
+                    prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "NewtonMassAPI"]
+                )
+                {
+                    double[] newton:inertia = [8.60626e-7, 0.00000115753, 6.51588e-7, 1e-12, 3.89882e-7, -1e-12]
+                    point3f physics:centerOfMass = (0.014815, 1.6212e-8, -0.00829992)
+                    float3 physics:diagonalInertia = (0.0000011597556, 0.00000115753, 3.524584e-7)
+                    float physics:mass = 0.00618934
+                    quatf physics:principalAxes = (0.9469398, -8.245896e-7, -0.3214109, -2.798827e-7)
+
+                    def PhysicsRevoluteJoint "right_hip_roll" (
+                        prepend apiSchemas = ["MjcJointAPI", "NewtonJointAPI"]
+                    )
+                    {
+                        uniform double mjc:armature = 0.0018
+                        uniform double mjc:damping = 0.053
+                        uniform double mjc:frictionloss = 0.0048
+                        float newton:armature = 0.0018
+                        float newton:damping = 0.0009250245
+                        float newton:friction = 0.0048
+                        uniform token physics:axis = "Z"
+                        rel physics:body0 = </microduck/Geometry/trunk_base/bearing_roll>
+                        rel physics:body1 = </microduck/Geometry/trunk_base/bearing_roll/hip_l_2>
+                        point3f physics:localPos0 = (0, 0.0165, 0.0125)
+                        point3f physics:localPos1 = (0, 0, 0)
+                        quatf physics:localRot0 = (1.5891075e-16, 2.7755576e-16, 0.70710677, 0.70710677)
+                        quatf physics:localRot1 = (1, 0, 0, 0)
+                        float physics:lowerLimit = -22
+                        float physics:upperLimit = 22
+                    }
+
+                    def "upper_leg_right" (
+                        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "NewtonMassAPI"]
+                    )
+                    {
+                        double[] newton:inertia = [0.0000168753, 0.0000103691, 0.0000198269, 0.00000441852, -2.27982e-7, 3.89298e-7]
+                        point3f physics:centerOfMass = (-0.006766, 0.0228838, 0.0134531)
+                        float3 physics:diagonalInertia = (0.000019845265, 0.000019108042, 0.000008117992)
+                        float physics:mass = 0.0482067
+                        quatf physics:principalAxes = (0.36578593, 0.58369637, -0.37427855, 0.62081784)
+
+                        def PhysicsRevoluteJoint "right_hip_pitch" (
+                            prepend apiSchemas = ["MjcJointAPI", "NewtonJointAPI"]
+                        )
+                        {
+                            uniform double mjc:armature = 0.0018
+                            uniform double mjc:damping = 0.053
+                            uniform double mjc:frictionloss = 0.0048
+                            float newton:armature = 0.0018
+                            float newton:damping = 0.0009250245
+                            float newton:friction = 0.0048
+                            uniform token physics:axis = "Z"
+                            rel physics:body0 = </microduck/Geometry/trunk_base/bearing_roll/hip_l_2>
+                            rel physics:body1 = </microduck/Geometry/trunk_base/bearing_roll/hip_l_2/upper_leg_right>
+                            point3f physics:localPos0 = (0.025, 0, -0.0185)
+                            point3f physics:localPos1 = (0, 0, 0)
+                            quatf physics:localRot0 = (0.5, -0.5, 0.5, -0.5)
+                            quatf physics:localRot1 = (1, 0, 0, 0)
+                            float physics:lowerLimit = -90
+                            float physics:upperLimit = 90
+                        }
+
+                        def "leg_2" (
+                            prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "NewtonMassAPI"]
+                        )
+                        {
+                            double[] newton:inertia = [0.00000215507, 0.00000525056, 0.00000433925, 1e-12, -7.65005e-7, 0]
+                            point3f physics:centerOfMass = (-0.0318937, -1.52e-10, -0.00953505)
+                            float3 physics:diagonalInertia = (0.00000525056, 0.000004580537, 0.0000019137833)
+                            float physics:mass = 0.0215844
+                            quatf physics:principalAxes = (0.5702627, 0.41809145, 0.41809145, 0.5702627)
+
+                            over "leg_1" (
+                                prepend apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
+                            )
+                            {
+                                rel material:binding:physics = </microduck/Physics/PhysicsMaterial>
+                                uniform int mjc:group = 3
+                                uniform double[] mjc:solref = [0.02, 1]
+                                float newton:contactGap = 0
+                                uniform token physics:approximation = "convexHull"
+                                float physics:density = 1000
+                            }
+
+                            def PhysicsRevoluteJoint "right_knee" (
+                                prepend apiSchemas = ["MjcJointAPI", "NewtonJointAPI"]
+                            )
+                            {
+                                uniform double mjc:armature = 0.0018
+                                uniform double mjc:damping = 0.053
+                                uniform double mjc:frictionloss = 0.0048
+                                float newton:armature = 0.0018
+                                float newton:damping = 0.0009250245
+                                float newton:friction = 0.0048
+                                uniform token physics:axis = "Z"
+                                rel physics:body0 = </microduck/Geometry/trunk_base/bearing_roll/hip_l_2/upper_leg_right>
+                                rel physics:body1 = </microduck/Geometry/trunk_base/bearing_roll/hip_l_2/upper_leg_right/leg_2>
+                                point3f physics:localPos0 = (-0.022, 0.0357771, -0.004)
+                                point3f physics:localPos1 = (0, 0, 0)
+                                quatf physics:localRot0 = (8.326673e-17, 1, 2.220446e-16, -3.330669e-16)
+                                quatf physics:localRot1 = (1, 0, 0, 0)
+                                float physics:lowerLimit = -90
+                                float physics:upperLimit = 90
+                            }
+
+                            def "ankle_right" (
+                                prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "NewtonMassAPI"]
+                            )
+                            {
+                                double[] newton:inertia = [0.00000591534, 0.0000111534, 0.00000774016, 2.04877e-7, -8.247e-8, 5.7017e-8]
+                                point3f physics:centerOfMass = (0.00615539, -0.0137482, -0.0156566)
+                                float3 physics:diagonalInertia = (0.000011162246, 0.000007743216, 0.000005903438)
+                                float physics:mass = 0.0300251
+                                quatf physics:principalAxes = (0.51742387, 0.50165284, 0.4746821, 0.50526613)
+
+                                over "right_foot_collision" (
+                                    prepend apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
+                                )
+                                {
+                                    rel material:binding:physics = </microduck/Physics/PhysicsMaterial>
+                                    uniform int mjc:group = 3
+                                    uniform double[] mjc:solref = [0.02, 1]
+                                    float newton:contactGap = 0
+                                    uniform token physics:approximation = "convexHull"
+                                    float physics:density = 1000
+                                }
+
+                                over "right_foot" (
+                                    prepend apiSchemas = ["MjcSiteAPI", "NewtonSiteAPI"]
+                                )
+                                {
+                                    uniform int mjc:group = 3
+                                }
+
+                                def PhysicsRevoluteJoint "right_ankle" (
+                                    prepend apiSchemas = ["MjcJointAPI", "NewtonJointAPI"]
+                                )
+                                {
+                                    uniform double mjc:armature = 0.0018
+                                    uniform double mjc:damping = 0.053
+                                    uniform double mjc:frictionloss = 0.0048
+                                    float newton:armature = 0.0018
+                                    float newton:damping = 0.0009250245
+                                    float newton:friction = 0.0048
+                                    uniform token physics:axis = "Z"
+                                    rel physics:body0 = </microduck/Geometry/trunk_base/bearing_roll/hip_l_2/upper_leg_right/leg_2>
+                                    rel physics:body1 = </microduck/Geometry/trunk_base/bearing_roll/hip_l_2/upper_leg_right/leg_2/ankle_right>
+                                    point3f physics:localPos0 = (-0.042, 6.938894e-18, -0.026)
+                                    point3f physics:localPos1 = (0, 0, 0)
+                                    quatf physics:localRot0 = (3.330669e-16, -0.70710677, -0.70710677, 5.551115e-17)
+                                    quatf physics:localRot1 = (1, 0, 0, 0)
+                                    float physics:lowerLimit = -90
+                                    float physics:upperLimit = 90
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+def PhysicsScene "PhysicsScene" (
+    prepend apiSchemas = ["NewtonSceneAPI", "MjcSceneAPI"]
+)
+{
+    uniform token mjc:compiler:angle = "radian"
+    uniform int newton:maxSolverIterations = 100
+    uniform int newton:timeStepsPerSecond = 500
+    vector3f physics:gravityDirection = (0, 0, -1)
+    float physics:gravityMagnitude = 9.81
+}
+

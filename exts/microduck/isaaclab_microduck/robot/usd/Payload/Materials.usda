@@ -1,0 +1,818 @@
+#usda 1.0
+(
+    customLayerData = {
+        string creator = "MuJoCo USD Converter v0.5.0"
+    }
+    defaultPrim = "microduck"
+    kilogramsPerUnit = 1
+    metersPerUnit = 1
+    upAxis = "Z"
+)
+
+def Xform "microduck"
+{
+    def Scope "Materials"
+    {
+        def Material "seeed_bearing__configuration__22x16x4_material" (
+            prepend references = @./MaterialsLibrary.usdc@</Materials/seeed_bearing__configuration__22x16x4_material>
+        )
+        {
+        }
+
+        def Material "right_shell_material" (
+            prepend references = @./MaterialsLibrary.usdc@</Materials/right_shell_material>
+        )
+        {
+        }
+
+        def Material "banana_pcb_locker_material" (
+            prepend references = @./MaterialsLibrary.usdc@</Materials/banana_pcb_locker_material>
+        )
+        {
+        }
+
+        def Material "trunk_base_material" (
+            prepend references = @./MaterialsLibrary.usdc@</Materials/trunk_base_material>
+        )
+        {
+        }
+
+        def Material "xl330_material" (
+            prepend references = @./MaterialsLibrary.usdc@</Materials/xl330_material>
+        )
+        {
+        }
+
+        def Material "power_support_material" (
+            prepend references = @./MaterialsLibrary.usdc@</Materials/power_support_material>
+        )
+        {
+        }
+
+        def Material "np_f970_material" (
+            prepend references = @./MaterialsLibrary.usdc@</Materials/np_f970_material>
+        )
+        {
+        }
+
+        def Material "left_shell_material" (
+            prepend references = @./MaterialsLibrary.usdc@</Materials/left_shell_material>
+        )
+        {
+        }
+
+        def Material "yaw2roll_material" (
+            prepend references = @./MaterialsLibrary.usdc@</Materials/yaw2roll_material>
+        )
+        {
+        }
+
+        def Material "bearing_roll_material" (
+            prepend references = @./MaterialsLibrary.usdc@</Materials/bearing_roll_material>
+        )
+        {
+        }
+
+        def Material "hip_l_material" (
+            prepend references = @./MaterialsLibrary.usdc@</Materials/hip_l_material>
+        )
+        {
+        }
+
+        def Material "upper_leg_left_material" (
+            prepend references = @./MaterialsLibrary.usdc@</Materials/upper_leg_left_material>
+        )
+        {
+        }
+
+        def Material "upper_leg_rigidity_plate_material" (
+            prepend references = @./MaterialsLibrary.usdc@</Materials/upper_leg_rigidity_plate_material>
+        )
+        {
+        }
+
+        def Material "leg_material" (
+            prepend references = @./MaterialsLibrary.usdc@</Materials/leg_material>
+        )
+        {
+        }
+
+        def Material "sole_left_material" (
+            prepend references = @./MaterialsLibrary.usdc@</Materials/sole_left_material>
+        )
+        {
+        }
+
+        def Material "foot_left_material" (
+            prepend references = @./MaterialsLibrary.usdc@</Materials/foot_left_material>
+        )
+        {
+        }
+
+        def Material "seeed_bearing__configuration_default_material" (
+            prepend references = @./MaterialsLibrary.usdc@</Materials/seeed_bearing__configuration_default_material>
+        )
+        {
+        }
+
+        def Material "ankle_left_material" (
+            prepend references = @./MaterialsLibrary.usdc@</Materials/ankle_left_material>
+        )
+        {
+        }
+
+        def Material "neck_material" (
+            prepend references = @./MaterialsLibrary.usdc@</Materials/neck_material>
+        )
+        {
+        }
+
+        def Material "neck_pitch_material" (
+            prepend references = @./MaterialsLibrary.usdc@</Materials/neck_pitch_material>
+        )
+        {
+        }
+
+        def Material "yaw_roll_motion_material" (
+            prepend references = @./MaterialsLibrary.usdc@</Materials/yaw_roll_motion_material>
+        )
+        {
+        }
+
+        def Material "lens_material" (
+            prepend references = @./MaterialsLibrary.usdc@</Materials/lens_material>
+        )
+        {
+        }
+
+        def Material "face_part_material" (
+            prepend references = @./MaterialsLibrary.usdc@</Materials/face_part_material>
+        )
+        {
+        }
+
+        def Material "jaw_soft_material" (
+            prepend references = @./MaterialsLibrary.usdc@</Materials/jaw_soft_material>
+        )
+        {
+        }
+
+        def Material "motor_support_material" (
+            prepend references = @./MaterialsLibrary.usdc@</Materials/motor_support_material>
+        )
+        {
+        }
+
+        def Material "top_head_shell_material" (
+            prepend references = @./MaterialsLibrary.usdc@</Materials/top_head_shell_material>
+        )
+        {
+        }
+
+        def Material "elec_rpi_robot_hat_pcb_material" (
+            prepend references = @./MaterialsLibrary.usdc@</Materials/elec_rpi_robot_hat_pcb_material>
+        )
+        {
+        }
+
+        def Material "soft_mouth_top_material" (
+            prepend references = @./MaterialsLibrary.usdc@</Materials/soft_mouth_top_material>
+        )
+        {
+        }
+
+        def Material "noenoeil_material" (
+            prepend references = @./MaterialsLibrary.usdc@</Materials/noenoeil_material>
+        )
+        {
+        }
+
+        def Material "jaw_material" (
+            prepend references = @./MaterialsLibrary.usdc@</Materials/jaw_material>
+        )
+        {
+        }
+
+        def Material "bottom_head_shell_material" (
+            prepend references = @./MaterialsLibrary.usdc@</Materials/bottom_head_shell_material>
+        )
+        {
+        }
+
+        def Material "m12_lens_holder_material" (
+            prepend references = @./MaterialsLibrary.usdc@</Materials/m12_lens_holder_material>
+        )
+        {
+        }
+
+        def Material "pcb__raspberry_pi_zero_2_w_material" (
+            prepend references = @./MaterialsLibrary.usdc@</Materials/pcb__raspberry_pi_zero_2_w_material>
+        )
+        {
+        }
+
+        def Material "speaker_material" (
+            prepend references = @./MaterialsLibrary.usdc@</Materials/speaker_material>
+        )
+        {
+        }
+
+        def Material "upper_leg_right_material" (
+            prepend references = @./MaterialsLibrary.usdc@</Materials/upper_leg_right_material>
+        )
+        {
+        }
+
+        def Material "ankle_right_material" (
+            prepend references = @./MaterialsLibrary.usdc@</Materials/ankle_right_material>
+        )
+        {
+        }
+
+        def Material "sole_right_material" (
+            prepend references = @./MaterialsLibrary.usdc@</Materials/sole_right_material>
+        )
+        {
+        }
+
+        def Material "foot_right_material" (
+            prepend references = @./MaterialsLibrary.usdc@</Materials/foot_right_material>
+        )
+        {
+        }
+    }
+
+    over "Geometry"
+    {
+        over "trunk_base"
+        {
+            over "seeed_bearing__configuration__22x16x4" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                rel material:binding = </microduck/Materials/seeed_bearing__configuration__22x16x4_material>
+            }
+
+            over "right_shell" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                rel material:binding = </microduck/Materials/right_shell_material>
+            }
+
+            over "banana_pcb_locker" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                rel material:binding = </microduck/Materials/banana_pcb_locker_material>
+            }
+
+            over "trunk_base" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                rel material:binding = </microduck/Materials/trunk_base_material>
+            }
+
+            over "xl330" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                rel material:binding = </microduck/Materials/xl330_material>
+            }
+
+            over "power_support" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                rel material:binding = </microduck/Materials/power_support_material>
+            }
+
+            over "power_support_1" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                rel material:binding = </microduck/Materials/power_support_material>
+            }
+
+            over "np_f970" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                rel material:binding = </microduck/Materials/np_f970_material>
+            }
+
+            over "xl330_1" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                rel material:binding = </microduck/Materials/xl330_material>
+            }
+
+            over "left_shell" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                rel material:binding = </microduck/Materials/left_shell_material>
+            }
+
+            over "seeed_bearing__configuration__22x16x4_1" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                rel material:binding = </microduck/Materials/seeed_bearing__configuration__22x16x4_material>
+            }
+
+            over "yaw2roll"
+            {
+                over "yaw2roll" (
+                    prepend apiSchemas = ["MaterialBindingAPI"]
+                )
+                {
+                    rel material:binding = </microduck/Materials/yaw2roll_material>
+                }
+
+                over "xl330" (
+                    prepend apiSchemas = ["MaterialBindingAPI"]
+                )
+                {
+                    rel material:binding = </microduck/Materials/xl330_material>
+                }
+
+                over "seeed_bearing__configuration__22x16x4" (
+                    prepend apiSchemas = ["MaterialBindingAPI"]
+                )
+                {
+                    rel material:binding = </microduck/Materials/seeed_bearing__configuration__22x16x4_material>
+                }
+
+                over "bearing_roll" (
+                    prepend apiSchemas = ["MaterialBindingAPI"]
+                )
+                {
+                    rel material:binding = </microduck/Materials/bearing_roll_material>
+                }
+
+                over "hip_l"
+                {
+                    over "seeed_bearing__configuration__22x16x4" (
+                        prepend apiSchemas = ["MaterialBindingAPI"]
+                    )
+                    {
+                        rel material:binding = </microduck/Materials/seeed_bearing__configuration__22x16x4_material>
+                    }
+
+                    over "hip_l" (
+                        prepend apiSchemas = ["MaterialBindingAPI"]
+                    )
+                    {
+                        rel material:binding = </microduck/Materials/hip_l_material>
+                    }
+
+                    over "upper_leg_left"
+                    {
+                        over "upper_leg_left" (
+                            prepend apiSchemas = ["MaterialBindingAPI"]
+                        )
+                        {
+                            rel material:binding = </microduck/Materials/upper_leg_left_material>
+                        }
+
+                        over "xl330" (
+                            prepend apiSchemas = ["MaterialBindingAPI"]
+                        )
+                        {
+                            rel material:binding = </microduck/Materials/xl330_material>
+                        }
+
+                        over "upper_leg_rigidity_plate" (
+                            prepend apiSchemas = ["MaterialBindingAPI"]
+                        )
+                        {
+                            rel material:binding = </microduck/Materials/upper_leg_rigidity_plate_material>
+                        }
+
+                        over "seeed_bearing__configuration__22x16x4" (
+                            prepend apiSchemas = ["MaterialBindingAPI"]
+                        )
+                        {
+                            rel material:binding = </microduck/Materials/seeed_bearing__configuration__22x16x4_material>
+                        }
+
+                        over "xl330_1" (
+                            prepend apiSchemas = ["MaterialBindingAPI"]
+                        )
+                        {
+                            rel material:binding = </microduck/Materials/xl330_material>
+                        }
+
+                        over "leg"
+                        {
+                            over "leg" (
+                                prepend apiSchemas = ["MaterialBindingAPI"]
+                            )
+                            {
+                                rel material:binding = </microduck/Materials/leg_material>
+                            }
+
+                            over "leg_1" (
+                                prepend apiSchemas = ["MaterialBindingAPI"]
+                            )
+                            {
+                                rel material:binding = </microduck/Materials/leg_material>
+                            }
+
+                            over "xl330" (
+                                prepend apiSchemas = ["MaterialBindingAPI"]
+                            )
+                            {
+                                rel material:binding = </microduck/Materials/xl330_material>
+                            }
+
+                            over "ankle_left"
+                            {
+                                over "sole_left" (
+                                    prepend apiSchemas = ["MaterialBindingAPI"]
+                                )
+                                {
+                                    rel material:binding = </microduck/Materials/sole_left_material>
+                                }
+
+                                over "left_foot_collision" (
+                                    prepend apiSchemas = ["MaterialBindingAPI"]
+                                )
+                                {
+                                    rel material:binding = </microduck/Materials/sole_left_material>
+                                }
+
+                                over "foot_left" (
+                                    prepend apiSchemas = ["MaterialBindingAPI"]
+                                )
+                                {
+                                    rel material:binding = </microduck/Materials/foot_left_material>
+                                }
+
+                                over "seeed_bearing__configuration_default" (
+                                    prepend apiSchemas = ["MaterialBindingAPI"]
+                                )
+                                {
+                                    rel material:binding = </microduck/Materials/seeed_bearing__configuration_default_material>
+                                }
+
+                                over "ankle_left" (
+                                    prepend apiSchemas = ["MaterialBindingAPI"]
+                                )
+                                {
+                                    rel material:binding = </microduck/Materials/ankle_left_material>
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            over "neck"
+            {
+                over "neck" (
+                    prepend apiSchemas = ["MaterialBindingAPI"]
+                )
+                {
+                    rel material:binding = </microduck/Materials/neck_material>
+                }
+
+                over "xl330" (
+                    prepend apiSchemas = ["MaterialBindingAPI"]
+                )
+                {
+                    rel material:binding = </microduck/Materials/xl330_material>
+                }
+
+                over "xl330_1" (
+                    prepend apiSchemas = ["MaterialBindingAPI"]
+                )
+                {
+                    rel material:binding = </microduck/Materials/xl330_material>
+                }
+
+                over "neck_1" (
+                    prepend apiSchemas = ["MaterialBindingAPI"]
+                )
+                {
+                    rel material:binding = </microduck/Materials/neck_material>
+                }
+
+                over "neck_pitch_1"
+                {
+                    over "neck_pitch" (
+                        prepend apiSchemas = ["MaterialBindingAPI"]
+                    )
+                    {
+                        rel material:binding = </microduck/Materials/neck_pitch_material>
+                    }
+
+                    over "seeed_bearing__configuration__22x16x4" (
+                        prepend apiSchemas = ["MaterialBindingAPI"]
+                    )
+                    {
+                        rel material:binding = </microduck/Materials/seeed_bearing__configuration__22x16x4_material>
+                    }
+
+                    over "yaw_roll_motion"
+                    {
+                        over "yaw_roll_motion" (
+                            prepend apiSchemas = ["MaterialBindingAPI"]
+                        )
+                        {
+                            rel material:binding = </microduck/Materials/yaw_roll_motion_material>
+                        }
+
+                        over "xl330" (
+                            prepend apiSchemas = ["MaterialBindingAPI"]
+                        )
+                        {
+                            rel material:binding = </microduck/Materials/xl330_material>
+                        }
+
+                        over "seeed_bearing__configuration__22x16x4" (
+                            prepend apiSchemas = ["MaterialBindingAPI"]
+                        )
+                        {
+                            rel material:binding = </microduck/Materials/seeed_bearing__configuration__22x16x4_material>
+                        }
+
+                        over "seeed_bearing__configuration__22x16x4_1" (
+                            prepend apiSchemas = ["MaterialBindingAPI"]
+                        )
+                        {
+                            rel material:binding = </microduck/Materials/seeed_bearing__configuration__22x16x4_material>
+                        }
+
+                        over "jaw_soft"
+                        {
+                            over "lens" (
+                                prepend apiSchemas = ["MaterialBindingAPI"]
+                            )
+                            {
+                                rel material:binding = </microduck/Materials/lens_material>
+                            }
+
+                            over "face_part" (
+                                prepend apiSchemas = ["MaterialBindingAPI"]
+                            )
+                            {
+                                rel material:binding = </microduck/Materials/face_part_material>
+                            }
+
+                            over "xl330" (
+                                prepend apiSchemas = ["MaterialBindingAPI"]
+                            )
+                            {
+                                rel material:binding = </microduck/Materials/xl330_material>
+                            }
+
+                            over "jaw_soft" (
+                                prepend apiSchemas = ["MaterialBindingAPI"]
+                            )
+                            {
+                                rel material:binding = </microduck/Materials/jaw_soft_material>
+                            }
+
+                            over "motor_support" (
+                                prepend apiSchemas = ["MaterialBindingAPI"]
+                            )
+                            {
+                                rel material:binding = </microduck/Materials/motor_support_material>
+                            }
+
+                            over "top_head_shell" (
+                                prepend apiSchemas = ["MaterialBindingAPI"]
+                            )
+                            {
+                                rel material:binding = </microduck/Materials/top_head_shell_material>
+                            }
+
+                            over "xl330_1" (
+                                prepend apiSchemas = ["MaterialBindingAPI"]
+                            )
+                            {
+                                rel material:binding = </microduck/Materials/xl330_material>
+                            }
+
+                            over "seeed_bearing__configuration_default" (
+                                prepend apiSchemas = ["MaterialBindingAPI"]
+                            )
+                            {
+                                rel material:binding = </microduck/Materials/seeed_bearing__configuration_default_material>
+                            }
+
+                            over "elec_rpi_robot_hat_pcb" (
+                                prepend apiSchemas = ["MaterialBindingAPI"]
+                            )
+                            {
+                                rel material:binding = </microduck/Materials/elec_rpi_robot_hat_pcb_material>
+                            }
+
+                            over "soft_mouth_top" (
+                                prepend apiSchemas = ["MaterialBindingAPI"]
+                            )
+                            {
+                                rel material:binding = </microduck/Materials/soft_mouth_top_material>
+                            }
+
+                            over "noenoeil" (
+                                prepend apiSchemas = ["MaterialBindingAPI"]
+                            )
+                            {
+                                rel material:binding = </microduck/Materials/noenoeil_material>
+                            }
+
+                            over "jaw" (
+                                prepend apiSchemas = ["MaterialBindingAPI"]
+                            )
+                            {
+                                rel material:binding = </microduck/Materials/jaw_material>
+                            }
+
+                            over "bottom_head_shell" (
+                                prepend apiSchemas = ["MaterialBindingAPI"]
+                            )
+                            {
+                                rel material:binding = </microduck/Materials/bottom_head_shell_material>
+                            }
+
+                            over "m12_lens_holder" (
+                                prepend apiSchemas = ["MaterialBindingAPI"]
+                            )
+                            {
+                                rel material:binding = </microduck/Materials/m12_lens_holder_material>
+                            }
+
+                            over "pcb__raspberry_pi_zero_2_w" (
+                                prepend apiSchemas = ["MaterialBindingAPI"]
+                            )
+                            {
+                                rel material:binding = </microduck/Materials/pcb__raspberry_pi_zero_2_w_material>
+                            }
+
+                            over "speaker" (
+                                prepend apiSchemas = ["MaterialBindingAPI"]
+                            )
+                            {
+                                rel material:binding = </microduck/Materials/speaker_material>
+                            }
+                        }
+                    }
+                }
+            }
+
+            over "bearing_roll"
+            {
+                over "yaw2roll" (
+                    prepend apiSchemas = ["MaterialBindingAPI"]
+                )
+                {
+                    rel material:binding = </microduck/Materials/yaw2roll_material>
+                }
+
+                over "xl330" (
+                    prepend apiSchemas = ["MaterialBindingAPI"]
+                )
+                {
+                    rel material:binding = </microduck/Materials/xl330_material>
+                }
+
+                over "bearing_roll" (
+                    prepend apiSchemas = ["MaterialBindingAPI"]
+                )
+                {
+                    rel material:binding = </microduck/Materials/bearing_roll_material>
+                }
+
+                over "seeed_bearing__configuration__22x16x4" (
+                    prepend apiSchemas = ["MaterialBindingAPI"]
+                )
+                {
+                    rel material:binding = </microduck/Materials/seeed_bearing__configuration__22x16x4_material>
+                }
+
+                over "hip_l_2"
+                {
+                    over "hip_l" (
+                        prepend apiSchemas = ["MaterialBindingAPI"]
+                    )
+                    {
+                        rel material:binding = </microduck/Materials/hip_l_material>
+                    }
+
+                    over "seeed_bearing__configuration__22x16x4" (
+                        prepend apiSchemas = ["MaterialBindingAPI"]
+                    )
+                    {
+                        rel material:binding = </microduck/Materials/seeed_bearing__configuration__22x16x4_material>
+                    }
+
+                    over "upper_leg_right"
+                    {
+                        over "xl330" (
+                            prepend apiSchemas = ["MaterialBindingAPI"]
+                        )
+                        {
+                            rel material:binding = </microduck/Materials/xl330_material>
+                        }
+
+                        over "seeed_bearing__configuration__22x16x4" (
+                            prepend apiSchemas = ["MaterialBindingAPI"]
+                        )
+                        {
+                            rel material:binding = </microduck/Materials/seeed_bearing__configuration__22x16x4_material>
+                        }
+
+                        over "upper_leg_rigidity_plate" (
+                            prepend apiSchemas = ["MaterialBindingAPI"]
+                        )
+                        {
+                            rel material:binding = </microduck/Materials/upper_leg_rigidity_plate_material>
+                        }
+
+                        over "upper_leg_right" (
+                            prepend apiSchemas = ["MaterialBindingAPI"]
+                        )
+                        {
+                            rel material:binding = </microduck/Materials/upper_leg_right_material>
+                        }
+
+                        over "xl330_1" (
+                            prepend apiSchemas = ["MaterialBindingAPI"]
+                        )
+                        {
+                            rel material:binding = </microduck/Materials/xl330_material>
+                        }
+
+                        over "leg_2"
+                        {
+                            over "xl330" (
+                                prepend apiSchemas = ["MaterialBindingAPI"]
+                            )
+                            {
+                                rel material:binding = </microduck/Materials/xl330_material>
+                            }
+
+                            over "leg" (
+                                prepend apiSchemas = ["MaterialBindingAPI"]
+                            )
+                            {
+                                rel material:binding = </microduck/Materials/leg_material>
+                            }
+
+                            over "leg_1" (
+                                prepend apiSchemas = ["MaterialBindingAPI"]
+                            )
+                            {
+                                rel material:binding = </microduck/Materials/leg_material>
+                            }
+
+                            over "ankle_right"
+                            {
+                                over "ankle_right" (
+                                    prepend apiSchemas = ["MaterialBindingAPI"]
+                                )
+                                {
+                                    rel material:binding = </microduck/Materials/ankle_right_material>
+                                }
+
+                                over "sole_right" (
+                                    prepend apiSchemas = ["MaterialBindingAPI"]
+                                )
+                                {
+                                    rel material:binding = </microduck/Materials/sole_right_material>
+                                }
+
+                                over "right_foot_collision" (
+                                    prepend apiSchemas = ["MaterialBindingAPI"]
+                                )
+                                {
+                                    rel material:binding = </microduck/Materials/sole_right_material>
+                                }
+
+                                over "seeed_bearing__configuration_default" (
+                                    prepend apiSchemas = ["MaterialBindingAPI"]
+                                )
+                                {
+                                    rel material:binding = </microduck/Materials/seeed_bearing__configuration_default_material>
+                                }
+
+                                over "foot_right" (
+                                    prepend apiSchemas = ["MaterialBindingAPI"]
+                                )
+                                {
+                                    rel material:binding = </microduck/Materials/foot_right_material>
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+

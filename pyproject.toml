@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools", "toml"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "isaac-microduck"
+version = "0.1.0"
+description = "RL training environments for the MicroDuck biped robot in Isaac Lab (kitless Newton)"
+readme = "README.md"
+license = { text = "BSD-3-Clause" }
+requires-python = ">=3.12"
+authors = [{ name = "Yoll" }]
+dependencies = []
+
+[tool.setuptools.packages.find]
+where = ["exts/microduck"]
