@@ -46,23 +46,39 @@ parser.add_argument(
     type=str,
     default="rsl_rl_cfg_entry_point",
 )
-parser.add_argument("--video", action="store_true", default=False, help="Record 5-second video clips every 500 iterations.")
-parser.add_argument("--video_interval", type=int, default=None, help="Override video interval (steps).")
-parser.add_argument("--video_length", type=int, default=None, help="Override video length (frames).")
+parser.add_argument(
+    "--video",
+    action="store_true",
+    default=False,
+    help="Record 5-second video clips every 500 RL iterations.",
+)
+parser.add_argument(
+    "--video_interval",
+    type=int,
+    default=None,
+    help="Override video interval (steps).",
+)
+parser.add_argument(
+    "--video_length",
+    type=int,
+    default=None,
+    help="Override video length (frames).",
+)
 AppLauncher.add_app_launcher_args(parser)
 args_cli = parser.parse_args()
 
-import gymnasium as gym
-import torch
+import gymnasium as gym  # noqa: E402
 
-import isaaclab_tasks  # noqa: F401 -- trigger gym registration
-from isaaclab.envs import ManagerBasedRLEnv
-from isaaclab_tasks.utils.hydra import resolve_presets
-from isaaclab_tasks.utils.parse_cfg import load_cfg_from_registry
-from isaaclab_tasks.utils.sim_launcher import launch_simulation
+import isaaclab_tasks  # noqa: F401,E402 -- trigger gym registration
+from isaaclab_tasks.utils.hydra import resolve_presets  # noqa: E402
+from isaaclab_tasks.utils.parse_cfg import load_cfg_from_registry  # noqa: E402
+from isaaclab_tasks.utils.sim_launcher import launch_simulation  # noqa: E402
 
-from isaaclab_rl.rsl_rl import RslRlVecEnvWrapper, RslRlBaseRunnerCfg, handle_deprecated_rsl_rl_cfg
-from packaging import version
+from isaaclab_rl.rsl_rl import (
+    RslRlBaseRunnerCfg,
+    RslRlVecEnvWrapper,
+    handle_deprecated_rsl_rl_cfg,
+)
 from rsl_rl.runners import OnPolicyRunner
 
 # ---------------------------------------------------------------------------
@@ -81,9 +97,9 @@ env_cfg.commands.base_velocity.debug_vis = False
 
 # All ducks face +X (heading=0) at slightly randomised positions
 env_cfg.commands.base_velocity.ranges.heading = (0.0, 0.0)
-env_cfg.commands.base_velocity.ranges.lin_vel_x = (0.5, 1.0)    # forward only
-env_cfg.commands.base_velocity.ranges.lin_vel_y = (-0.1, 0.1)   # minimal lateral
-env_cfg.commands.base_velocity.ranges.ang_vel_z = (-0.3, 0.3)   # minimal yaw rate
+env_cfg.commands.base_velocity.ranges.lin_vel_x = (0.5, 1.0)  # forward only
+env_cfg.commands.base_velocity.ranges.lin_vel_y = (-0.1, 0.1)  # minimal lateral
+env_cfg.commands.base_velocity.ranges.ang_vel_z = (-0.3, 0.3)  # minimal yaw rate
 env_cfg.events.reset_base.params["pose_range"]["yaw"] = (0.0, 0.0)  # spawn facing +X
 
 # Load agent config and migrate deprecated fields for installed RSL-RL

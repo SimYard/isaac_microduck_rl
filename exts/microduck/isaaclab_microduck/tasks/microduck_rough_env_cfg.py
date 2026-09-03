@@ -7,14 +7,11 @@ import os
 
 from isaaclab.actuators import ImplicitActuatorCfg
 from isaaclab.assets import ArticulationCfg
-
-import isaaclab.sim as sim_utils
-
-_ROBOT_USD_PATH = os.path.join(os.path.dirname(__file__), "..", "robot", "usd", "microduck.usda")
 from isaaclab.managers import RewardTermCfg as RewTerm
 from isaaclab.managers import SceneEntityCfg
 from isaaclab.utils.configclass import configclass
 
+import isaaclab.sim as sim_utils
 import isaaclab_tasks.manager_based.locomotion.velocity.mdp as mdp
 from isaaclab_tasks.manager_based.locomotion.velocity.velocity_env_cfg import (
     LocomotionVelocityRoughEnvCfg,
@@ -22,8 +19,11 @@ from isaaclab_tasks.manager_based.locomotion.velocity.velocity_env_cfg import (
 )
 
 ## Pre-defined configs ##
+_ROBOT_USD_PATH = os.path.join(os.path.dirname(__file__), "..", "robot", "usd", "microduck.usda")
+
+
 def microduck_asset() -> ArticulationCfg:
-    """MicroDuck articulation config loading the MuJoCo-derived USD asset."""
+    """MicroDuck articulation config loading the USD asset."""
     return ArticulationCfg(
         prim_path="{ENV_REGEX_NS}/Robot",
         spawn=sim_utils.UsdFileCfg(
