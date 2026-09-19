@@ -1,3 +1,6 @@
+# Copyright (c) 2025, Yoll. All rights reserved.
+#
+# SPDX-License-Identifier: BSD-3-Clause
 """Setup configuration for the isaaclab-microduck extension."""
 from setuptools import setup
 
